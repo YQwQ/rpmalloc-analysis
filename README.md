@@ -31,7 +31,6 @@
 
 本项目在 `1.代码/` 目录下提供了完整的测试源码。学习者可以使用 **GCC** 直接编译并运行性能测试，亲眼见证重构后的高并发吞吐实力。
 ### 1. 编译并运行多线程及线程死亡测试 (main_5.c)
-主要用于验证基础的分配流与回收逻辑：
 gcc my_rpmalloc.c main_5.c -o test_main_5 -lpthread -O3
 
 gcc rpmalloc.c main_5.c -o test_main_5 -lpthread -O3
