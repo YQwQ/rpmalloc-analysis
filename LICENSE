@@ -1,21 +1,43 @@
-MIT License
+================================================================================
+本仓库版权与授权协议 (Copyright & License Agreement)
+================================================================================
 
-Copyright (c) 2017 Mattias Jansson
+本项目是针对 rpmalloc 内存分配器的个人原创深度剖析、中文注释与教学图解项目。
+项目作者/版权所有者：YQwQ
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+本项目采用分类授权与保护机制：
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+一、 原始代码部分 (Original rpmalloc Code)
+--------------------------------------------------------------------------------
+本项目中所包含的、由 Mattias Jansson 创作的 rpmalloc 原始源代码，其版权仍归原作者
+所有，并严格遵守其原本的 MIT 许可证（详见仓库内 LICENSE-RPMALLOC 文件）。
+本项目作者在原始代码上所做的中文深度注释、测试用例，允许个人研究、学习与非商业性传播。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+
+二、 原创图解、剖析文档与教学手稿部分 (Diagrams & Documentation)
+--------------------------------------------------------------------------------
+本项目中的所有原创分析手稿大图（包括但不限于“01.图解_基础篇.png”、“02.图解_进阶篇.png”）、
+推导文档及算法物理逻辑图示，均采用：
+【 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议 (CC BY-NC-SA 4.0) 】进行授权。
+
+根据该协议，您在遵守以下条件的前提下，可以自由地分享、修改这些内容：
+
+1. 署名 (Attribution)：
+   您在使用、引用、或展示本项目图解与文档时，必须给出适当的署名（明确标注原作者【YQwQ】
+   并附带本项目仓库链接），并指出是否对原始材料作了修改。
+
+2. 非商业性使用 (Non-Commercial)：
+   您不得将本项目的图解、手稿、文档（无论是原始形式、修改后的形式，还是电子版或打印版）
+   直接作为商品进行售卖，亦不得直接用于商业性牟利行为。
+
+3. 相同方式共享 (ShareAlike)：
+   如果您对本项目的图解或文档进行了再创作、转换或基于此进行二次开发，您必须使用与
+   本协议（CC BY-NC-SA 4.0）相同的授权协议来分发您的贡献。
+
+4. 补充说明（关于服务授权）：
+   本协议禁止直接打包分发本项目成果进行倒卖牟利；但鼓励您基于本项目获得的知识 and 理解，
+   对外提供有偿的技术讲解、教学、技术咨询等增值服务。
+
+================================================================================
+本仓库由 YQwQ 拥有所有权利。感谢您对原创硬核成果与开源合规的尊重！
+================================================================================
