@@ -39,7 +39,7 @@ gcc my_rpmalloc.c main_6.c -o test_main_6 -lpthread -O3
 
 gcc rpmalloc.c main_6.c -o test_main_6 -lpthread -O3
 
-上述的main_5.c 第13行开关 教学/原版，第38行 5是去除大块，6是加上大块
+上述的main_5.c 第13行开关 教学/原版，第38行 5是去除Huge，6是加上Huge
 
 ## ⚖️ 许可与使用条款 (License & Terms of Use)
 
