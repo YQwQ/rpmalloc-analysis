@@ -31,16 +31,12 @@
 
 本项目在 `1.代码/` 目录下提供了完整的测试源码。学习者可以使用 **GCC** 直接编译并运行性能测试，亲眼见证重构后的高并发吞吐实力。
 ### 1. 编译并运行多线程及线程死亡测试 (main_5.c)
-# 编译教学重构版
 gcc my_rpmalloc.c main_5.c -o test_main_5_mine -lpthread -O3
 
-# 编译原版进行对比
 gcc rpmalloc.c main_5.c -o test_main_5_orig -lpthread -O3
 ### 2. 编译并运行高并发跨线程释放性能测试 (main_6.c)
-# 编译教学重构版
 gcc my_rpmalloc.c main_6.c -o test_main_6_mine -lpthread -O3
 
-# 编译原版进行对比
 gcc rpmalloc.c main_6.c -o test_main_6_orig -lpthread -O3
 
 上述的main_5.c 第13行开关 教学/原版，第38行 5是去除Huge，6是加上Huge
