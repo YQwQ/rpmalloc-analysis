@@ -33,9 +33,11 @@
 ### 1. 编译并运行多线程及线程死亡测试 (main_5.c)
 主要用于验证基础的分配流与回收逻辑：
 gcc my_rpmalloc.c main_5.c -o test_main_5 -lpthread -O3
+
 gcc rpmalloc.c main_5.c -o test_main_5 -lpthread -O3
 ### 2. 编译并运行高并发跨线程释放性能测试 (main_6.c)
 gcc my_rpmalloc.c main_6.c -o test_main_6 -lpthread -O3
+
 gcc rpmalloc.c main_6.c -o test_main_6 -lpthread -O3
 
 上述的main_5.c 第13行开关 教学/原版，第38行 5是去除大块，6是加上大块
