@@ -1,18 +1,18 @@
 # 🚀 Rpmalloc 源码硬核剖析与核心机制重构 (精简教学版)
 
 > **极简、硬核、无损。**
-> 本项目对 `rpmalloc` 的庞大源码进行了**核心骨架抽离**，在**完全不损失任何性能**的前提下，为高并发无锁内存分配器的学习者提供一条最纯粹的物理级推导路径。
+> 本项目对 `rpmalloc` 的庞大源码进行了**核心骨架抽离**，在**完全不损失任何性能**的前提下，为高并发内存分配器的学习者提供一个核心机制实现参考。
 
 ---
 
 ## ⚡ 项目核心特色 (Why this repo?)
 
-许多人面对原版 `rpmalloc` 几千行的工程代码望而却步，本项目彻底打破这一壁垒：
+许多人面对原版 `rpmalloc` 几千行的工程代码望而却步，本项目旨在降低阅读源码的门槛：
 
 * **核心代码抽离**：砍掉一切工程冗余，整套项目仅保留 **`rpmalloc`**、**`rpfree`** 以及 **初始化** 3 个最核心的对外物理接口。从3000行代码变成 1250行代码
-* **保留纯粹机制**：完整保留了 `rpmalloc` 赖以生存的核心内存池机制、Span/Page/Block 级拓扑、多线程完全隔离以及免自旋无锁 Mailbox 交互。
-* **轻量化做减法**：去除了对学习核心机制毫无帮助的 `huge` 缓存机制，避免学习者陷入非必要的工程细节泥潭。去除可移植性之后的平台为:Linux, Ubuntu24.04.4, GCC13.3.0
-* **性能完全无损**：由于底层的物理内存池结构、位运算对齐算法和无锁 CAS 路径完全基于原版高标准保留，经过虚拟机二核实测，**重构精简后的版本性能与原版完全一致，绝无任何性能劣化**！
+* **保留纯粹机制**：完整保留了 `rpmalloc` 赖以生存的核心内存池机制、Span/Page/Block 级拓扑、多线程完全隔离以及免自旋无锁链表 (Mailbox) 交互。
+* **轻量化做减法**：去除了对学习核心机制毫无帮助的 `Huge` 缓存机制，避免学习者陷入工程细节泥潭(详细可阅读原版)。环境：Ubuntu 24.04.4 LTS + GCC 13.3.0（去除了原版的跨平台可移植性，x86-64 物理底层）。
+* **性能完全无损**：由于底层的物理内存池结构、位运算对齐算法和无锁 CAS 路径完全基于原版高标准保留，经过虚拟机二核实测，**经虚拟机多线程压力测试，重构版吞吐性能(除Huge)与原版无明显差异**！
 
 ---
 
@@ -31,13 +31,13 @@
 
 本项目在 `1.代码/` 目录下提供了完整的测试源码。学习者可以使用 **GCC** 直接编译并运行性能测试，亲眼见证重构后的高并发吞吐实力。
 ### 1. 编译并运行多线程及线程死亡测试 (main_5.c)
-gcc my_rpmalloc.c main_5.c -o test_main_5 -lpthread -O3
+gcc my_rpmalloc.c main_5.c -o test_main_5_mine -lpthread -O3
 
-gcc rpmalloc.c main_5.c -o test_main_5 -lpthread -O3
+gcc rpmalloc.c main_5.c -o test_main_5_orig -lpthread -O3
 ### 2. 编译并运行高并发跨线程释放性能测试 (main_6.c)
-gcc my_rpmalloc.c main_6.c -o test_main_6 -lpthread -O3
+gcc my_rpmalloc.c main_6.c -o test_main_6_mine -lpthread -O3
 
-gcc rpmalloc.c main_6.c -o test_main_6 -lpthread -O3
+gcc rpmalloc.c main_6.c -o test_main_6_orig -lpthread -O3
 
 上述的main_5.c 第13行开关 教学/原版，第38行 5是去除Huge，6是加上Huge
 
