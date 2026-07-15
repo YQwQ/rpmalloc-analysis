@@ -45,7 +45,7 @@ gcc rpmalloc.c main_6.c -o test_main_6_orig -lpthread -O3
 
 本项目采用**双重授权**（详见根目录 **LICENSE** 文件）：
 1. **代码部分**：严格遵守原作者的 MIT 许可证。
-2. **图解与剖析文档**：采用 **CC BY-NC-SA 4.0 (署名-非商业性使用-相同方式共享)** 国际协议保护。
+2. **图解与剖析文档**：采用 **CC BY-NC-SA 4.0 (署名-非商业性使用-相同方式共享)** 国际协议保护。  
 一共只在Github和Gitee平台记录  
 GitHub:https://github.com/YQwQ/rpmalloc-analysis  
 Gitee:https://gitee.com/onetwoyi/rpmalloc-analysis
